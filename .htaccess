@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+RewriteRule ^accueil$ index.php [L]
+RewriteRule ^admin$ views/admin.php [L]
+RewriteRule ^commander views/order.php [L]
+RewriteRule ^histoire$ views/history.php [L]
+RewriteRule ^contact$ views/contact.php [L]
+RewriteRule ^produits$ views/products.php [L]
+RewriteRule ^produit-(\d+)$ views/product.php?id=$1 [L]

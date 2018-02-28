@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - ofaitmaison@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ofaitmaison">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="cnsit"/>
+    <schema id="8" parent="1" name="fromanotherworld"/>
+    <schema id="9" parent="1" name="templatedb"/>
+    <table id="10" parent="2" name="carousel_images"/>
+    <table id="11" parent="2" name="categories">
+      <Comment>Catégorie du plat (sucré, salé, etc.)</Comment>
+    </table>
+    <table id="12" parent="2" name="commande_produits"/>
+    <table id="13" parent="2" name="commandes">
+      <Comment>Table regroupant les différentes commandes</Comment>
+    </table>
+    <table id="14" parent="2" name="flash_news"/>
+    <table id="15" parent="2" name="photos">
+      <Comment>Photos</Comment>
+    </table>
+    <table id="16" parent="2" name="posts">
+      <Comment>Table qui reprend les articles, news, etc.</Comment>
+    </table>
+    <table id="17" parent="2" name="produits"/>
+    <column id="18" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="19" parent="10" name="img">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="carousel_owner">
+      <Position>3</Position>
+      <Comment>Le carousel dans lequel cette image sera affichée (nom de la classe)</Comment>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="10" name="title">
+      <Position>4</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="22" parent="10" name="description">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="23" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="11" name="id">
+      <Position>1</Position>
+      <Comment>id de la catégorie</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="11" name="descr_fr">
+      <Position>2</Position>
+      <Comment>nom de la catégorie (FR)</Comment>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="11" name="descr_nl">
+      <Position>3</Position>
+      <Comment>nom de la catégorie (NL)</Comment>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="id_parent">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="28" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="12" name="id_commande">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="12" name="id_plat">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="12" name="nombre">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="12" name="id_commande">
+      <ColNames>id_commande</ColNames>
+    </index>
+    <column id="33" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="13" name="nom_prenom">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="35" parent="13" name="email">
+      <Position>3</Position>
+      <DataType>varchar(250)|0</DataType>
+    </column>
+    <column id="36" parent="13" name="telephone">
+      <Position>4</Position>
+      <DataType>varchar(250)|0</DataType>
+    </column>
+    <column id="37" parent="13" name="comment">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="13" name="traitee">
+      <Position>6</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="13" name="prix">
+      <Position>7</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="40" parent="13" name="date_creation">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="41" parent="13" name="date_livraison">
+      <Position>9</Position>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="13" name="origine">
+      <Position>10</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="43" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="14" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="46" parent="14" name="show">
+      <Position>3</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="47" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="49" parent="15" name="url">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="50" parent="15" name="produit_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="51" parent="15" name="UNIQ_PHOTO">
+      <ColNames>url
+produit_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="53" parent="15" name="UNIQ_PHOTO">
+      <ColNames>url
+produit_id</ColNames>
+      <UnderlyingIndexName>UNIQ_PHOTO</UnderlyingIndexName>
+    </key>
+    <column id="54" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="16" name="title">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="16" name="content">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="16" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="58" parent="16" name="updated_at">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="59" parent="16" name="is_news">
+      <Position>6</Position>
+      <Comment>Indique si ça doit être affiché sur la page d&apos;accueil</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="60" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="61" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="62" parent="17" name="nom_fr">
+      <Position>2</Position>
+      <DataType>varchar(250)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="17" name="nom_nl">
+      <Position>3</Position>
+      <DataType>varchar(250)|0</DataType>
+    </column>
+    <column id="64" parent="17" name="ingredients">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="65" parent="17" name="recette">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="66" parent="17" name="prix">
+      <Position>6</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="67" parent="17" name="img">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="68" parent="17" name="id_categorie">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="69" parent="17" name="descr">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="70" parent="17" name="en_avant">
+      <Position>10</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="71" parent="17" name="visible">
+      <Position>11</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <key id="72" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

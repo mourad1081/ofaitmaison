@@ -1,0 +1,13 @@
+{
+    "name": "mourad/ofaitmaison",
+    "description": "O Fait Maison",
+    "authors": [
+        {
+            "name": "Mourad Akandouch",
+            "email": "mourad1081@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.4"
+    }
+}
